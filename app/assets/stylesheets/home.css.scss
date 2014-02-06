@@ -19,15 +19,27 @@ a {
   background: #333;
   bottom: 0;
   color: #777;
-  padding: 60px 20px;
+  padding: 60px 40px;
   position: fixed;
   text-align: center;
   top: 0;
   width: 300px;
   .search {
-    margin-top: 30%;
+    margin-top: 35%;
+  }
+  .options {
+    margin-top: 35%;
+    text-align: left;
+    h3 {
+      border-bottom: 1px solid #777;
+      display: inline-block;
+      font-size: 1em;
+      font-weight: normal;
+      padding-bottom: 4px;
+    }
   }
 }
+
 .content {
   margin-left: 300px;
   padding: 60px 50px;
