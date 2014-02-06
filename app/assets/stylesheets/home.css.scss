@@ -1,3 +1,60 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// weird Pure css resets, should def be defaults
+body {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  letter-spacing: 0.01em;
+}
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.sidebar {
+  background: #333;
+  bottom: 0;
+  color: #777;
+  padding: 60px 20px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 300px;
+  .search {
+    margin-top: 30%;
+  }
+}
+.content {
+  margin-left: 300px;
+  padding: 60px 50px;
+  .sort {
+    ul {
+      display: inline-block;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        float: left;
+        margin: 0;
+        margin-right: 40px;
+        padding: 0;
+        a {
+          color: #b3b3b3;
+          text-decoration: none;
+          &:hover {
+            color: #808080;
+          }
+        }
+        a.active {
+          color: #808080;
+          border-bottom: 1px solid #808080;
+          padding-bottom: 3px;
+        }
+      }
+    }
+  }
+}
