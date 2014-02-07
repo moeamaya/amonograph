@@ -12,12 +12,34 @@
     </div>
   </div>
   <div class="content">
-    <div class="sort">
-      <ul>
-        <li><a href="#" class="active">Popular</a></li>
-        <li><a href="#">Following</a></li>
-        <li><a href="#">Newest</a></li>
-      </ul>
+    <div class="edit">
+      <div class="sort">
+        <ul>
+          <li><a href="#" class="active">Popular</a></li>
+          <li><a href="#">Following</a></li>
+          <li><a href="#">Newest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="drawing">
+      <%= image_tag "utzon_sydney.svg" %>
+    </div>
+    <div class="details">
+      <div class="vertical-center">
+        <div class="details-text">
+          <span>&#65516;</span> Next Drawing
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+<script>
+  var ready = function() {
+    $('img').wheelzoom();
+  };
+  $(document).ready(ready);
+  $(document).on('page:load', ready);
+
+</script>
