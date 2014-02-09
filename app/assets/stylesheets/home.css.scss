@@ -17,6 +17,10 @@ a {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
+.vertical-center {
+  display: table-cell;
+  vertical-align: middle;
+}
 
 .sidebar {
   background: #333;
@@ -26,9 +30,15 @@ a {
   position: fixed;
   text-align: center;
   top: 0;
-  width: 300px;
+  width: 260px;
+  font-size: 0.8em;
   .search {
     margin-top: 35%;
+    input[type="text"]{
+      background: none;
+      border: none;
+      border-bottom: 1px solid #777;
+    }
   }
   .options {
     margin-top: 35%;
@@ -47,41 +57,19 @@ a {
   bottom: 0;
   height: 100%;
   left: 0;
-  margin-left: 300px;
+  margin-left: 260px;
   position: absolute;
   right: 0;
   top: 0;
-  .edit {
+  .details {
     display: table;
     height: 10%;
-    .sort {
-      display: table-cell;
-      vertical-align: middle;
-      ul {
-        display: inline-block;
-        list-style: none;
-        margin: 0;
-        margin-left: 40px;
-        margin-top: 10px;
-        padding: 0;
-        li {
-          float: left;
-          margin: 0;
-          margin-right: 40px;
-          padding: 0;
-          a {
-            color: #b3b3b3;
-            text-decoration: none;
-            &:hover {
-              color: #808080;
-            }
-          }
-          a.active {
-            color: #808080;
-            border-bottom: 1px solid #808080;
-            padding-bottom: 3px;
-          }
-        }
+    width: 100%;
+    .details-text {
+      margin-left: 40px;
+      span {
+        font-size: 0.7em;
+        margin-left: 10px;
       }
     }
   }
@@ -92,21 +80,17 @@ a {
     width: 100%;
     img {
      max-height: 100%;
-      width: 100%;
-    }
-  }
-  .details {
+     width: 100%;
+   }
+ }
+  .next {
     display: table;
     height: 10%;
     width: 100%;
-    .vertical-center {
-      display: table-cell;
-      vertical-align: middle;
-      .details-text {
-        margin-left: 40px;
-        span {
-          margin-right: 6px;
-        }
+    .next-text {
+      margin-left: 40px;
+      span {
+        margin-right: 6px;
       }
     }
   }

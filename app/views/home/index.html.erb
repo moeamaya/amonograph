@@ -8,25 +8,23 @@
       </form>
     </div>
     <div class="options">
-      <h3>Mode</h3>
+      <h3>View</h3>
     </div>
   </div>
   <div class="content">
-    <div class="edit">
-      <div class="sort">
-        <ul>
-          <li><a href="#" class="active">Popular</a></li>
-          <li><a href="#">Following</a></li>
-          <li><a href="#">Newest</a></li>
-        </ul>
+    <div class="details">
+      <div class="vertical-center">
+        <div class="details-text">
+          Jørn Utzon - Sydney Opera House <span>amdixon</span>
+        </div>
       </div>
     </div>
     <div class="drawing">
       <%= image_tag "utzon_sydney.svg" %>
     </div>
-    <div class="details">
+    <div class="next">
       <div class="vertical-center">
-        <div class="details-text">
+        <div class="next-text">
           <span>&#65516;</span> Next Drawing
         </div>
       </div>
@@ -41,5 +39,4 @@
   };
   $(document).ready(ready);
   $(document).on('page:load', ready);
-
 </script>
