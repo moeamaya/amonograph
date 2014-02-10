@@ -1,4 +1,8 @@
 class DrawingsController < ApplicationController
+  def show
+    @drawing = Drawing.find(params[:id])
+  end
+
   def create
     @drawing = Drawing.create(drawing_params)
 
@@ -11,9 +15,6 @@ class DrawingsController < ApplicationController
         format.json { render json: @note.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def show
   end
 
   private

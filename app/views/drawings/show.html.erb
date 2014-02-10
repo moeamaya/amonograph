@@ -1,6 +1,6 @@
 <div id="layout">
   <div class="sidebar">
-    amonograph
+    <a href="/" class="logo">amonograph</a>
     <div class="search">
       <form>
         &#8594;
@@ -18,12 +18,12 @@
     <div class="details">
       <div class="vertical-center">
         <div class="details-text">
-          Jørn Utzon - Sydney Opera House <span>amdixon</span>
+          <%= @drawing.title %> <span>amdixon</span>
         </div>
       </div>
     </div>
     <div class="drawing">
-      <%= image_tag "utzon_sydney.svg" %>
+      <%= image_tag @drawing.drawing_url.to_s %>
     </div>
     <div class="next">
       <div class="vertical-center">
@@ -39,6 +39,7 @@
   var ready = function() {
     $('img').wheelzoom();
   };
+  // run wheelzoom when images are loaded
   $(document).ready(ready);
-  $(document).on('page:load', ready);
+  $(document).on('window:load', ready);
 </script>
