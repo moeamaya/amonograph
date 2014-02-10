@@ -23,18 +23,7 @@
       </div>
     </div>
     <div class="drawing">
-      <%= form_for @drawing, :html => {:multipart => true} do |f| %>
-        <%= f.label :title %><br>
-        <%= f.text_field :title %><br>
-        <%= f.file_field :drawing %><br><br>
-        <%= f.submit %>
-      <% end %>
-      <% @gallery.each do |img| %>
-        <div class="gallery">
-          <%= image_tag img.drawing_url.to_s %>
-          <h5><%= img.title %></h5>
-        </div>
-      <% end %>
+      <%= image_tag "utzon_sydney.svg" %>
     </div>
     <div class="next">
       <div class="vertical-center">
@@ -46,4 +35,10 @@
   </div>
 </div>
 
-
+<script>
+  var ready = function() {
+    $('img').wheelzoom();
+  };
+  $(document).ready(ready);
+  $(document).on('page:load', ready);
+</script>

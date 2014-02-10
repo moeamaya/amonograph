@@ -34,6 +34,11 @@ gem 'devise_invitable'
 # Heroku required gem
 gem 'rails_12factor'
 
+# Upload images to Amazon S3
+gem 'carrierwave'
+gem 'fog', '~> 1.3.1'
+
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
