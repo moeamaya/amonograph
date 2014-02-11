@@ -1,7 +1,7 @@
 body {
   font-family: Georgia, Times, "Times New Roman", serif;
   letter-spacing: 0.01em;
-  overflow: hidden;
+  overflow: auto;
   height: 100%;
   width: 100%;
 }
@@ -64,6 +64,7 @@ a {
   right: 0;
   top: 0;
   .details {
+    border-bottom: 1px solid #ccc;
     display: table;
     height: 10%;
     width: 100%;
@@ -76,25 +77,26 @@ a {
     }
   }
   .drawing {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;;
     height: 80%;
     width: 100%;
     .gallery {
       margin-top: 20px;
-      width: 400px;
-      height: 200px;
+      margin-left: 20px;
+      width: 47%;
       border: 1px solid #ccc;
-      overflow: hidden;
       vertical-align: middle;
-    }
-    img {
-      height: 100%;
-      min-width: 100%;
-      max-width: 100%;
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      h5 {
+        position: relative;
+        z-index: 10;
+      }
     }
   }
   .next {
+    border-top: 1px solid #ccc;
     display: table;
     height: 10%;
     width: 100%;

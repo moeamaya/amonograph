@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.wheelzoom
+//= require imagesloaded.pkgd.min
+//= require masonry.pkgd.min
 //= require_tree .

@@ -22,16 +22,42 @@
         <%= f.file_field :drawing %><br><br>
         <%= f.submit %>
       <% end %>
+      <div id="container">
       <% @gallery.each do |img| %>
         <div class="gallery">
-          <%= image_tag img.drawing_url.to_s %>
+          <%= link_to(img) do %>
+            <%= image_tag img.drawing_url.to_s %>
+            <h5><%= img.title %></h5>
+          <% end %>
         </div>
-        <%= link_to(img) do %>
-          <h5><%= img.title %></h5>
-        <% end %>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  var container = document.querySelector('#container');
+
+  new imagesLoaded( container, function(){
+    var msnry = new Masonry( container, {
+      // options
+      itemSelector: '.gallery'
+    });
+  });
+
+  // var ready = function() {
+  //   var container = document.querySelector('#container');
+  //   var msnry = new Masonry( container, {
+  //     // options
+  //     itemSelector: '.gallery'
+  //   });
+  // }
+
+  // // run masonry when images are loaded
+  // $(document).ready(ready);
+  // $(window).load(ready);
+  // $(document).on('window:load', ready);
+</script>
 
 
