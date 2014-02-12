@@ -16,4 +16,5 @@
 //= require jquery.wheelzoom
 //= require imagesloaded.pkgd.min
 //= require masonry.pkgd.min
+//= require jquery.inview.min
 //= require_tree .

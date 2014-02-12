@@ -1,0 +1,8 @@
+<% drawings.each do |drawing| %>
+  <div class="gallery">
+    <%= link_to(drawing) do %>
+      <h5><%= drawing.title %> <span>amdixon</span></h5>
+      <%= image_tag drawing.drawing_url.to_s %>
+    <% end %>
+  </div>
+<% end %>
