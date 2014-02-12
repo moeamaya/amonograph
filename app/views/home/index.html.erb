@@ -26,15 +26,16 @@
         <%= render :partial => 'drawings', :locals => { :drawings => @drawings } %>
       </div>
     </div>
-    <%= link_to('Load More Items', root_path(:page => @drawings.next_page), :class => 'load-more-items') %>
+    <%= link_to('Load More Items', root_path(:page => @drawings.next_page), :remote => true, :class => 'load-more-items') %>
   </div>
 </div>
 
 <script>
   var container = document.querySelector('#container');
+  var msnry;
 
   new imagesLoaded( container, function(){
-    var msnry = new Masonry( container, {
+    msnry = new Masonry( container, {
       // options
       itemSelector: '.gallery'
     });

@@ -1,0 +1,8 @@
+var newDrawings = '<%= escape_javascript(render partial: "ajax_drawings", :locals => { :drawings => @drawings }) %>';
+
+$('#container').append(newDrawings).masonry();
+$('a.load-more-items').attr('href', '<%= root_path page: @drawings.next_page %>');
+
+<% unless @drawings.next_page %>
+  $('a.load-more-items').remove();
+<% end %>
