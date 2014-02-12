@@ -1,17 +1,53 @@
 <div id="layout">
   <div class="sidebar">
-    <a href="/" class="logo">amonograph</a>
-    <div class="search">
-      <form>
-        &#8594;
-        <input type="text"></input>
-      </form>
+    <div class="sidebar-main">
+      <a href="/" class="logo">amonograph</a>
+      <div class="search">
+        <div class="search-icon">
+          <%= image_tag "search.svg" %>
+        </div>
+        <form>
+          <input type="text"></input>
+        </form>
+      </div>
+      <div class="options">
+        <h3>View</h3>
+        <ul>
+          <li>
+            <a href="/">Gallery</a>
+          </li>
+          <li>
+            <a href="#"  class="active">Full</a>
+          </li>
+        </ul>
+      </div>
+      <div class="options">
+        <h3>SORT</h3>
+        <ul class="sort">
+          <li>
+            <a href="#" class="active">
+              <%= image_tag "popular.svg" %> Popular
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= image_tag "favorites.svg" %> Favorites
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= image_tag "new.svg" %> Newest
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= image_tag "curated.svg" %> Curated
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="options">
-      <h3>View</h3>
-      <ul>
-        <li>Full</li>
-      </ul>
+    <div class="sidebar-close">
     </div>
   </div>
   <div class="content">
@@ -28,7 +64,10 @@
     <div class="next">
       <div class="vertical-center">
         <div class="next-text">
-          <span>&#65516;</span> Next Drawing
+
+          <%= link_to @next do %>
+            <span>&#65516;</span> Next Drawing
+          <% end %>
         </div>
       </div>
     </div>
@@ -36,10 +75,10 @@
 </div>
 
 <script>
-  var ready = function() {
-    $('img').wheelzoom();
-  };
-  // run wheelzoom when images are loaded
-  $(document).ready(ready);
-  $(document).on('window:load', ready);
+  var container = document.querySelector('.drawing');
+
+  // wait for images to load before calling js
+  new imagesLoaded( container, function(){
+    $('.drawing img').wheelzoom();
+  });
 </script>

@@ -1,6 +1,13 @@
 class DrawingsController < ApplicationController
   def show
-    @drawing = Drawing.find(params[:id])
+    id = params[:id]
+    plus = id.to_i + 1
+    puts plus
+
+    @drawing = Drawing.find(id)
+    link = Drawing.find_by_id(plus)
+    @next = link ? link : Drawing.first
+
   end
 
   def create
@@ -9,7 +16,7 @@ class DrawingsController < ApplicationController
     respond_to do |format|
       if @drawing.save
         format.html { redirect_to root_path, notice: 'Note was successfully created.' }
-        format.json { render json: @darwing, status: :created, location: @drawing }
+        format.json { render json: @drawing, status: :created, location: @drawing }
       else
         format.html { render action: "new" }
         format.json { render json: @note.errors, status: :unprocessable_entity }
