@@ -1,0 +1,10 @@
+<div class="content">
+  <div class="index">
+    <%= form_for @drawing, :html => {:multipart => true} do |f| %>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %><br>
+      <%= f.file_field :drawing %><br><br>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

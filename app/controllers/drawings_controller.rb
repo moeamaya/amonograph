@@ -17,6 +17,10 @@ class DrawingsController < ApplicationController
     end
   end
 
+  def upload
+    @drawing = Drawing.new()
+  end
+
   private
 
   def drawing_params
