@@ -65,36 +65,77 @@ a {
 }
 
 .sidebar {
-  background: #333;
+  border-right: 1px solid #b3b3b3;
   bottom: 0;
   color: #777;
   font-size: 0.8em;
-  padding: 60px 40px;
   position: fixed;
   text-align: center;
   top: 0;
   width: 260px;
-  a.logo{
-    color: #777;
-  }
-  .search {
-    margin-top: 35%;
-    input[type="text"]{
-      background: none;
-      border: none;
-      border-bottom: 1px solid #777;
+  .sidebar-main {
+    float: left;
+    height: 100%;
+    width: 246px;
+    a.logo{
+      height: 35%;
+      line-height: 200px;
+    }
+    .search {
+      border-top: 1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
+      margin-top: 35%;
+      padding: 30px 0;
+      width: 100%;
+      input[type="text"]{
+        background: none;
+        border: none;
+        border-bottom: 1px solid #777;
+      }
+    }
+    .options {
+      margin: 20% 40px 0;
+      text-align: left;
+      h3 {
+        display: inline-block;
+        font-size: 0.8em;
+        font-weight: normal;
+        padding-bottom: 12px;
+        text-transform: uppercase;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        li {
+          font-size: 1.2em;
+          list-style: none;
+          margin: 0;
+          margin-bottom: 14px;
+          a {
+            color: #4d4d4d;
+            img {
+              min-width: 16px;
+              margin-right: 8px;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+      ul.sort {
+        a {
+          opacity: 0.43;
+        }
+        a.active {
+          opacity: 1.0;
+        }
+      }
     }
   }
-  .options {
-    margin-top: 35%;
-    text-align: left;
-    h3 {
-      border-bottom: 1px solid #777;
-      display: inline-block;
-      font-size: 1em;
-      font-weight: normal;
-      padding-bottom: 4px;
-    }
+  .sidebar-close {
+    border-left: 1px solid #e6e6e6;
+    float: left;
+    height: 100%;
+    width: 12px;
   }
 }
 
@@ -157,8 +198,9 @@ a {
 
 
   .load-more-items {
-    text-align: center;
+    display: block;
     padding-bottom: 40px;
+    text-align: center;
   }
   .drawing {
     height: 80%;

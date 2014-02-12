@@ -1,17 +1,49 @@
 <div id="layout">
   <div class="sidebar">
-    <a href="/" class="logo">amonograph</a>
-    <div class="search">
-      <form>
-        &#8594;
-        <input type="text"></input>
-      </form>
+    <div class="sidebar-main">
+      <a href="/" class="logo">amonograph</a>
+      <div class="search">
+        <div class="search-icon">
+          <%= image_tag "search.svg" %>
+        </div>
+        <form>
+          <input type="text"></input>
+        </form>
+      </div>
+      <div class="options">
+        <h3>View</h3>
+        <ul>
+          <li>Full</li>
+          <li>Gallery</li>
+        </ul>
+      </div>
+      <div class="options">
+        <h3>SORT</h3>
+        <ul class="sort">
+          <li>
+            <a href="#" class="active">
+              <%= image_tag "popular.svg" %> Popular
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= image_tag "favorites.svg" %> Favorites
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= image_tag "new.svg" %> Newest
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= image_tag "curated.svg" %> Curated
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="options">
-      <h3>View</h3>
-      <ul>
-        <li>Full</li>
-      </ul>
+    <div class="sidebar-close">
     </div>
   </div>
   <div class="content">
