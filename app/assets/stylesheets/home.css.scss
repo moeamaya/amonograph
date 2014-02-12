@@ -24,6 +24,40 @@ a {
   display: table-cell;
   vertical-align: middle;
 }
+/* Animations */
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.fadeInUp {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
 .layout {
   overflow: hidden;
   height: 100%;
@@ -120,6 +154,8 @@ a {
       }
     }
   }
+
+
   .load-more-items {
     text-align: center;
     padding-bottom: 40px;
