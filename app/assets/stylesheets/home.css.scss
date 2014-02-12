@@ -78,19 +78,24 @@ a {
     height: 100%;
     width: 246px;
     a.logo{
-      height: 35%;
-      line-height: 200px;
+      line-height: 180px;
     }
     .search {
       border-top: 1px solid #e6e6e6;
       border-bottom: 1px solid #e6e6e6;
-      margin-top: 35%;
       padding: 30px 0;
       width: 100%;
+      .search-icon {
+        padding-bottom: 10px;
+      }
       input[type="text"]{
         background: none;
         border: none;
-        border-bottom: 1px solid #777;
+        border-bottom: 1px solid #e6e6e6;
+        &:focus {
+          border-color: #777;
+          outline: none;
+        }
       }
     }
     .options {
@@ -113,21 +118,21 @@ a {
           margin-bottom: 14px;
           a {
             color: #4d4d4d;
+            opacity: 0.43;
             img {
               min-width: 16px;
               margin-right: 8px;
               vertical-align: middle;
             }
           }
+          a.active {
+            cursor: default;
+            opacity: 1.0;
+            pointer-events: none;
+          }
         }
       }
       ul.sort {
-        a {
-          opacity: 0.43;
-        }
-        a.active {
-          opacity: 1.0;
-        }
       }
     }
   }
