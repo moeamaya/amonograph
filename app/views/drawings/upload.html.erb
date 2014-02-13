@@ -1,10 +1,31 @@
-<div class="content">
-  <div class="index">
-    <%= form_for @drawing, :html => {:multipart => true} do |f| %>
-      <%= f.label :title %><br>
-      <%= f.text_field :title %><br>
-      <%= f.file_field :drawing %><br><br>
-      <%= f.submit %>
-    <% end %>
+<div id="layout">
+  <!-- sidebar menu -->
+  <% content_for :full_drawing do %>
+    <a href="/" >Full</a>
+  <% end %>
+  <%= render :partial => 'layouts/sidebar' %>
+
+  <div class="content">
+    <div class="upload">
+      <%= form_for @drawing, :html => {:multipart => true} do |f| %>
+        <% if @drawing.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@drawing.errors.count, "error") %> prohibited
+            this post from being saved:</h2>
+          <ul>
+          <% @drawing.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+        <% end %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title %><br>
+        <%= f.label :about %>
+        <%= f.text_area :about, :rows => 8 %><br>
+        <%= f.file_field :drawing %><br><br>
+        <%= f.submit "Upload Drawing", :class => 'button' %>
+      <% end %>
   </div>
 </div>

@@ -18,8 +18,8 @@ class DrawingsController < ApplicationController
         format.html { redirect_to root_path, notice: 'Note was successfully created.' }
         format.json { render json: @drawing, status: :created, location: @drawing }
       else
-        format.html { render action: "new" }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
+        format.html { render action: "upload" }
+        format.json { render json: @drawing.errors, status: :unprocessable_entity }
       end
     end
   end
