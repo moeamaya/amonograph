@@ -18,7 +18,7 @@ if Rails.env.production?
     }
     config.fog_directory  = 'amonograph_drawing'
     config.fog_public     = false
-    config.asset_host = 'http://d3g9mxxtdtetma.cloudfront.net'
+    config.asset_host = 'http://d2pviw63m56o5b.cloudfront.net'
   end
 end
 
