@@ -17,24 +17,27 @@
 var container = document.querySelector('#container');
 var msnry;
 
-// wait for images to load before
-new imagesLoaded( container, function(){
-  msnry = new Masonry( container, {
-    // options
-    itemSelector: '.gallery'
+var turbo = function() {
+  // wait for images to load before
+  new imagesLoaded( container, function(){
+    msnry = new Masonry( container, {
+      // options
+      itemSelector: '.gallery'
+    });
+    $('#loader').hide();
+    $(container).css('opacity',1.0);
+
+    // infinite scroll using inview
+    $('a.load-more-items').on('inview', function(e, visible) {
+      if (!visible) {
+        return;
+      }
+      return $.getScript($(this).attr('href'));
+    })
   });
-  $('#loader').hide();
-  $(container).css('opacity',1.0);
+}
 
-  // infinite scroll using inview
-  $('a.load-more-items').on('inview', function(e, visible) {
-    if (!visible) {
-      return;
-    }
-    return $.getScript($(this).attr('href'));
-  })
-});
-
+$(document).ready(turbo);
 </script>
 
 
