@@ -7,14 +7,14 @@
       <div id="container">
         <%= render :partial => 'drawings', :locals => { :drawings => @drawings } %>
       </div>
+      <%= link_to('Load More Items', root_path(:page => @drawings.next_page), :remote => true, :class => 'load-more-items') %>
     </div>
-    <%= link_to('Load More Items', root_path(:page => @drawings.next_page), :remote => true, :class => 'load-more-items') %>
   </div>
 </div>
 
 <script>
-  var container = document.querySelector('#container');
-  var msnry;
+var container = document.querySelector('#container');
+var msnry;
 
   // wait for images to load before
   new imagesLoaded( container, function(){
@@ -31,7 +31,7 @@
       return $.getScript($(this).attr('href'));
     })
   });
-</script>
+  </script>
 
 
 
