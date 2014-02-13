@@ -5,8 +5,14 @@ var newDrawings = '<%= escape_javascript(render partial: "ajax_drawings", :local
 $('#container').append(newDrawings);
 
 // get the new drawings as jquery objects
-var $el = $('.new');
-msnry.appended( $el );
+var $el = $('.new').css( 'opacity', 0.0 );
+
+console.log($el);
+
+$el.imagesLoaded( function() {
+  $el.css('opacity', 1.0);
+  msnry.appended( $el );
+})
 
 // wait 300ms to run masonry on new objects
 // setTimeout( function() {
