@@ -44,6 +44,9 @@ gem 'will_paginate'
 # ENV variables
 gem 'figaro'
 
+# Monitoring
+gem 'newrelic_rpm'
+
 group :development do
   # debugging
   gem 'better_errors'
