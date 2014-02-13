@@ -4,7 +4,8 @@
 
   <div class="content">
     <div class="index">
-      <div id="container">
+      <div id="container" style="opacity:0">
+        <div id="loader"><%= image_tag "spinner.gif" %></div>
         <%= render :partial => 'drawings', :locals => { :drawings => @drawings } %>
       </div>
       <%= link_to('Load More Items', root_path(:page => @drawings.next_page), :remote => true, :class => 'load-more-items') %>
@@ -22,6 +23,8 @@ var msnry;
       // options
       itemSelector: '.gallery'
     });
+    $('#loader').hide();
+    $(container).css('opacity',1.0);
 
     // infinite scroll using inview
     $('a.load-more-items').on('inview', function(e, visible) {

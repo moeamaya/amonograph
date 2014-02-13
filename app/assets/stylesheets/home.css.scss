@@ -225,6 +225,11 @@ textarea {
 
 // Content
 // --------------------------------------------------
+#loader {
+  position: relative;
+  left: 48%;
+  top: 48%;
+}
 .content {
   bottom: 0;
   height: 100%;
