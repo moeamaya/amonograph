@@ -27,10 +27,6 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# debugging
-gem 'better_errors'
-gem 'binding_of_caller'
-
 # User authentication
 gem 'devise'
 gem 'devise_invitable'
@@ -44,6 +40,15 @@ gem 'fog', '~> 1.3.1'
 
 # Pagination
 gem 'will_paginate'
+
+# ENV variables
+gem 'figaro'
+
+group :development do
+  # debugging
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -13,8 +13,8 @@ if Rails.env.production?
     # amazon AWS storage information
     config.fog_credentials = {
       :provider               => 'AWS',
-      :aws_access_key_id      => 'AKIAI4QMAGZUWULDTNRQ',
-      :aws_secret_access_key  => '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',
+      :aws_access_key_id      => ENV["AWS_KEY"],
+      :aws_secret_access_key  => ENV["AWS_SECRET"],
     }
     config.fog_directory  = 'amonograph_media'
     config.fog_public     = false
