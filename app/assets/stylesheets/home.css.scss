@@ -1,5 +1,6 @@
 body {
-  font-family: Georgia, Times, "Times New Roman", serif;
+  font-family: "Domine", Georgia, Times, "Times New Roman", serif;
+  font-size: 0.9em;
   letter-spacing: 0.01em;
   overflow: auto;
   height: 100%;
@@ -17,6 +18,9 @@ a {
   -moz-transition: all 0.6s ease;
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
+  &:hover {
+    color: #777;
+  }
 }
 label {
   display: block;
@@ -71,9 +75,9 @@ textarea {
   vertical-align: middle;
 }
 
-/* ---------------------- */
-/* Animations */
-/* ---------------------- */
+
+// Animations
+// --------------------------------------------------
 @-webkit-keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -127,6 +131,9 @@ textarea {
   }
 }
 
+
+// Sidebar
+// --------------------------------------------------
 .sidebar {
   border-right: 1px solid #b3b3b3;
   bottom: 0;
@@ -141,7 +148,8 @@ textarea {
     height: 100%;
     width: 246px;
     a.logo{
-      line-height: 180px;
+      display: block;
+      padding: 20% 0;
     }
     .search {
       border-top: 1px solid #e6e6e6;
@@ -160,6 +168,10 @@ textarea {
           outline: none;
         }
       }
+    }
+    .user {
+      padding: 8% 0;
+      border-bottom: 1px solid #e6e6e6;
     }
     .options {
       margin: 20% 40px 0;
@@ -187,6 +199,9 @@ textarea {
               margin-right: 8px;
               vertical-align: middle;
             }
+            &:hover {
+              opacity: 1.0;
+            }
           }
           a.active {
             cursor: default;
@@ -207,6 +222,9 @@ textarea {
   }
 }
 
+
+// Content
+// --------------------------------------------------
 .content {
   bottom: 0;
   height: 100%;

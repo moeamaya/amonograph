@@ -1,4 +1,6 @@
 class DrawingsController < ApplicationController
+  before_filter :authorize, only: [:upload]
+
   def show
     id = params[:id]
     plus = id.to_i + 1
@@ -32,5 +34,9 @@ class DrawingsController < ApplicationController
 
   def drawing_params
     params.require(:drawing).permit(:title, :about, :drawing, :views)
+  end
+
+  def authorize
+    redirect_to root_path, alert: "Not authorized" if current_user.nil?
   end
 end

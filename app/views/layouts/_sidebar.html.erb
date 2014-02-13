@@ -11,6 +11,15 @@
         <input type="text"></input>
       </form>
     </div>
+    <div class="user">
+      <% if current_user %>
+        <%= link_to destroy_user_session_path, :method => :delete do %>
+          <%= current_user.username %>
+        <% end %>
+      <% else %>
+        <%= link_to "Sign in", signup_path %>
+      <% end %>
+    </div>
 
     <div class="options">
       <h3>View</h3>
