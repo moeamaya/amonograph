@@ -16,7 +16,6 @@ if Rails.env.production?
       :aws_access_key_id      => ENV["AWS_KEY"],
       :aws_secret_access_key  => ENV["AWS_SECRET"],
     }
-    config.fog_directory  = 'amonograph_drawing'
     config.fog_public     = false
     config.asset_host = 'http://d2pviw63m56o5b.cloudfront.net'
   end
