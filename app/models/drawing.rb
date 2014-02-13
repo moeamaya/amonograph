@@ -5,5 +5,5 @@ class Drawing < ActiveRecord::Base
 
   mount_uploader :drawing, DrawingUploader
 
-  self.per_page = 6
+  self.per_page = 4
 end
