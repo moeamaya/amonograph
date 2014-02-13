@@ -13,7 +13,7 @@ class DrawingsController < ApplicationController
   end
 
   def create
-    @drawing = Drawing.create(drawing_params)
+    @drawing = current_user.drawings.create(drawing_params)
 
     respond_to do |format|
       if @drawing.save
