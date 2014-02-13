@@ -10,7 +10,7 @@ var $el = $('.new').css( 'opacity', 0.0 );
 console.log($el);
 
 $el.imagesLoaded( function() {
-  $el.css('opacity', 1.0);
+  $el.animate('opacity', 1.0);
   msnry.appended( $el );
 })
 

@@ -4,8 +4,8 @@
 
   <div class="content">
     <div class="index">
+      <div id="loader"><%= image_tag "spinner.gif" %></div>
       <div id="container" style="opacity:0">
-        <div id="loader"><%= image_tag "spinner.gif" %></div>
         <%= render :partial => 'drawings', :locals => { :drawings => @drawings } %>
       </div>
       <%= link_to('Load More Items', root_path(:page => @drawings.next_page), :remote => true, :class => 'load-more-items') %>
@@ -17,24 +17,25 @@
 var container = document.querySelector('#container');
 var msnry;
 
-  // wait for images to load before
-  new imagesLoaded( container, function(){
-    msnry = new Masonry( container, {
-      // options
-      itemSelector: '.gallery'
-    });
-    $('#loader').hide();
-    $(container).css('opacity',1.0);
-
-    // infinite scroll using inview
-    $('a.load-more-items').on('inview', function(e, visible) {
-      if (!visible) {
-        return;
-      }
-      return $.getScript($(this).attr('href'));
-    })
+// wait for images to load before
+new imagesLoaded( container, function(){
+  msnry = new Masonry( container, {
+    // options
+    itemSelector: '.gallery'
   });
-  </script>
+  $('#loader').hide();
+  $(container).css('opacity',1.0);
+
+  // infinite scroll using inview
+  $('a.load-more-items').on('inview', function(e, visible) {
+    if (!visible) {
+      return;
+    }
+    return $.getScript($(this).attr('href'));
+  })
+});
+
+</script>
 
 
 
