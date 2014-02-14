@@ -12,6 +12,9 @@
           <%= @drawing.title %> <span>amdixon</span>
         </div>
       </div>
+      <div class="scroll-zoom">
+        Scroll to ZOOM
+      </div>
     </div>
     <div class="drawing">
       <%= image_tag @drawing.drawing_url.to_s %>
@@ -19,7 +22,6 @@
     <div class="next">
       <div class="vertical-center">
         <div class="next-text">
-
           <%= link_to @next do %>
             <span>&#65516;</span> Next Drawing
           <% end %>

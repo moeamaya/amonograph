@@ -7,8 +7,6 @@ $container.append(newDrawings);
 // get the new drawings as jquery objects
 var $el = $('.new').css( 'opacity', 0.0 );
 
-console.log($el);
-
 $el.imagesLoaded( function() {
   $el.animate( {opacity: 1.0 }, 200 );
   $container.masonry('appended', $el);

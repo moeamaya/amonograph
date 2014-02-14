@@ -243,6 +243,7 @@ textarea {
     border-bottom: 1px solid #ccc;
     display: table;
     height: 10%;
+    position: relative;
     width: 100%;
     .details-text {
       margin-left: 40px;
@@ -251,6 +252,15 @@ textarea {
         font-size: 0.7em;
         margin-left: 10px;
       }
+    }
+    .scroll-zoom {
+      background: #fff;
+      border: 1px solid #ccc;
+      bottom: -1.2em;
+      font-size: 0.8em;
+      padding: 0.5em 1em;
+      position: absolute;
+      left: 3.3em;
     }
   }
   .index {
