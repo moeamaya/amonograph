@@ -1,7 +1,7 @@
 <div id="layout">
   <!-- sidebar menu -->
   <% content_for :full_drawing do %>
-    <a href="/" >Full</a>
+    <a href="/" class="active">Full</a>
   <% end %>
   <%= render :partial => 'layouts/sidebar' %>
 
@@ -16,18 +16,32 @@
         Scroll to ZOOM
       </div>
     </div>
+
     <div class="drawing">
       <%= image_tag @drawing.drawing_url.to_s %>
     </div>
-    <div class="next">
-      <div class="vertical-center">
-        <div class="next-text">
-          <%= link_to @next do %>
-            <span>&#65516;</span> Next Drawing
-          <% end %>
+
+    <!-- bottom link -->
+    <%= link_to @next do %>
+      <div class="next">
+        <div class="vertical-center">
+          <div class="next-content">
+            <div class="next-link">
+              <%= image_tag 'down.svg' %> Next Drawing
+          </div>
+          <div class="next-name">
+            <%= @next.title %>
+            <% if @next.user %>
+              <span>
+                <%= @next.user.username %>
+              </span>
+            <% end %>
+          </div>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+
   </div>
 </div>
 
