@@ -3,12 +3,9 @@ class DrawingsController < ApplicationController
 
   def show
     id = params[:id]
-    plus = id.to_i + 1
-    puts plus
 
     @drawing = Drawing.find(id)
-    link = Drawing.find_by_id(plus)
-    @next = link ? link : Drawing.first
+    @next = Drawing.next(id.to_i)
 
   end
 
