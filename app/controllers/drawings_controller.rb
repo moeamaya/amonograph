@@ -1,12 +1,12 @@
 class DrawingsController < ApplicationController
   before_filter :authorize, only: [:upload]
+  impressionist :actions => [:show, :unique => [:impressionable_type, :impressionable_id, :session_hash]]
 
   def show
     id = params[:id]
 
     @drawing = Drawing.find(id)
     @next = Drawing.next(id.to_i)
-
   end
 
   def create

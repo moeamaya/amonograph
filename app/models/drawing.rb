@@ -7,6 +7,8 @@ class Drawing < ActiveRecord::Base
 
   self.per_page = 5
 
+  is_impressionable :counter_cache => true, :column_name => :views, :unique => :request_hash
+
   # Searches the next 5 id values for given input
   # id expects an interger value
   def self.next(id)

@@ -46,6 +46,9 @@ gem 'figaro'
 # Monitoring
 gem 'newrelic_rpm'
 
+# logs views for pages/actions
+gem 'impressionist'
+
 group :development do
   # debugging
   gem 'better_errors'

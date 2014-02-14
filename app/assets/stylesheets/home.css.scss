@@ -195,7 +195,8 @@ textarea {
             color: #4d4d4d;
             opacity: 0.43;
             img {
-              min-width: 16px;
+              height: 16px;
+              width: 16px;
               margin-right: 8px;
               vertical-align: middle;
             }
@@ -246,12 +247,28 @@ textarea {
     position: relative;
     width: 100%;
     .details-text {
+      display: inline-block;
+      float: left;
       font-size: 1.4em;
       margin-left: 40px;
+      width: 55%;
       span {
         color: #b3b3b3;
         font-size: 0.7em;
         margin-left: 10px;
+      }
+    }
+    .details-stats {
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      display: inline-block;
+      float: left;
+      padding: 0 4%;
+      img {
+        height: 16px;
+        margin-right: 8px;
+        vertical-align: middle;
+        width: 16px;
       }
     }
     .scroll-zoom {
@@ -302,6 +319,7 @@ textarea {
 
   .load-more-items {
     display: block;
+    padding-top: 20px;
     padding-bottom: 40px;
     text-align: center;
   }

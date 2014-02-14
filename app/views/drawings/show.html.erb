@@ -11,6 +11,10 @@
         <div class="details-text">
           <%= @drawing.title %> <span>amdixon</span>
         </div>
+        <div class="details-stats">
+          <%= image_tag 'views.svg' %>
+          <%= @drawing.impressionist_count(:filter=>:ip_address) %>
+        </div>
       </div>
       <div class="scroll-zoom">
         Scroll to ZOOM
