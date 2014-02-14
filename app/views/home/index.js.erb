@@ -2,7 +2,7 @@
 var newDrawings = '<%= escape_javascript(render partial: "ajax_drawings", :locals => { :drawings => @drawings }) %>';
 
 // add new drawings to index
-$('#container').append(newDrawings);
+$container.append(newDrawings);
 
 // get the new drawings as jquery objects
 var $el = $('.new').css( 'opacity', 0.0 );
@@ -10,14 +10,10 @@ var $el = $('.new').css( 'opacity', 0.0 );
 console.log($el);
 
 $el.imagesLoaded( function() {
-  $el.animate('opacity', 1.0);
-  msnry.appended( $el );
+  $el.animate( {opacity: 1.0 }, 200 );
+  $container.masonry('appended', $el);
+  $el.removeClass('new');
 })
-
-// wait 300ms to run masonry on new objects
-// setTimeout( function() {
-//   msnry.appended( $el );
-// }, 150 );
 
 // set the load more button to the next page
 $('a.load-more-items').attr('href', '<%= root_path page: @drawings.next_page %>');

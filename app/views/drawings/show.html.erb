@@ -30,10 +30,8 @@
 </div>
 
 <script>
-  var container = document.querySelector('.drawing');
-
   // wait for images to load before calling js
-  new imagesLoaded( container, function(){
+  $('.drawing').imagesLoaded( function() {
     $('.drawing img').wheelzoom();
   });
 </script>
