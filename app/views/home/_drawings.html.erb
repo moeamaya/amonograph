@@ -10,6 +10,10 @@
     <% end %>
     <div class="gallery-hover">
       <%= truncate(drawing.about, length: 140) %>
+      <div class="gallery-hover-stats">
+        <span><%= image_tag 'views.svg' %></span>
+        <%= drawing.impressionist_count(:filter=>:ip_address) %>
+      </div>
     </div>
   </div>
 <% end %>
