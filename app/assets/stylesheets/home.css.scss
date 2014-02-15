@@ -311,8 +311,26 @@ textarea {
           float: right;
         }
       }
+      .gallery-hover {
+        background: #fff;
+        bottom: 0;
+        cursor: pointer;
+        height: 90px;
+        opacity: 0.0;
+        padding: 30px;
+        position: absolute;
+        width: 100%;
+        -webkit-transition: all 0.25s;
+        -moz-transition: all 0.6s;
+        -o-transition: all 0.6s;
+        transition: all 0.25s;
+      }
       &:hover {
         border-color: #808080;
+        .gallery-hover {
+          height: 100px;
+          opacity: 1.0;
+        }
       }
     }
   }
