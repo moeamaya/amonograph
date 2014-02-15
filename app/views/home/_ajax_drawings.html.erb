@@ -1,7 +1,11 @@
 <% drawings.each do |drawing| %>
   <div class="gallery new">
     <%= link_to(drawing) do %>
-      <h5><%= drawing.title %> <span>amdixon</span></h5>
+      <h5><%= drawing.title %>
+        <% if drawing.user %>
+          <span><%= drawing.user.username %></span>
+        <% end %>
+      </h5>
       <%= image_tag drawing.drawing_url.to_s %>
     <% end %>
   </div>

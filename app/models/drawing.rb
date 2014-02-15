@@ -17,7 +17,7 @@ class Drawing < ActiveRecord::Base
       id += 1
       ids << id
     }
-    try = Drawing.find_by_id(ids)
+    try = Drawing.order(:id).find_by_id(ids)
     if try.nil?
       return Drawing.first
     else
