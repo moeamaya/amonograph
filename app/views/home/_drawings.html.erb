@@ -9,7 +9,7 @@
       <%= image_tag drawing.drawing_url.to_s %>
     <% end %>
     <div class="gallery-hover">
-      <%= drawing.about %>
+      <%= truncate(drawing.about, length: 140) %>
     </div>
   </div>
 <% end %>
