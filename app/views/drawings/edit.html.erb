@@ -1,0 +1,11 @@
+<div id="layout">
+  <!-- sidebar menu -->
+  <% content_for :full_drawing do %>
+    <a href="/" >Full</a>
+  <% end %>
+  <%= render :partial => 'layouts/sidebar' %>
+
+  <div class="content">
+    <%= render :partial => 'form' %>
+  </div>
+</div>

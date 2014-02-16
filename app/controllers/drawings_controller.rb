@@ -1,5 +1,5 @@
 class DrawingsController < ApplicationController
-  before_filter :authorize, only: [:upload]
+  before_filter :authorize, only: [:upload, :edit, :create, :update]
   impressionist :actions => [:show, :unique => [:impressionable_type, :impressionable_id, :session_hash]]
 
   def show
@@ -7,6 +7,10 @@ class DrawingsController < ApplicationController
 
     @drawing = Drawing.find(id)
     @next = Drawing.next(id.to_i)
+  end
+
+  def new
+    @drawing = Drawing.new()
   end
 
   def create
@@ -23,9 +27,20 @@ class DrawingsController < ApplicationController
     end
   end
 
-  def upload
-    @drawing = Drawing.new()
+  def edit
+    @drawing = Drawing.find(params[:id])
   end
+
+  def update
+    @drawing = Drawing.find(params[:id])
+    if @drawing.update_attributes(drawing_params)
+       flash[:success] = "Drawing updated successfully!"
+       redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
 
   private
 
