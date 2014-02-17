@@ -1,15 +1,15 @@
 <% drawings.each do |drawing| %>
   <div class="gallery new">
     <%= link_to(drawing) do %>
+      <%= image_tag drawing.drawing_url.to_s %>
       <h5><%= drawing.title %>
         <% if drawing.user %>
           <span><%= drawing.user.username %></span>
         <% end %>
       </h5>
-      <%= image_tag drawing.drawing_url.to_s %>
     <% end %>
     <div class="gallery-hover">
-      <%= truncate(drawing.about, length: 140) %>
+      <%= truncate(drawing.about, length: 240) %>
       <div class="gallery-hover-stats">
         <span><%= image_tag 'views.svg' %></span>
         <%= drawing.impressionist_count(:filter=>:ip_address) %>

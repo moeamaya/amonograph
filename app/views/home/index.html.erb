@@ -1,6 +1,11 @@
 <div id="layout">
   <!-- sidebar menu -->
-  <%= render :partial => 'layouts/sidebar' %>
+  <%= render :partial => 'layouts/header' %>
+
+  <div class="subheader fadeInUp">
+    Selected
+    <p>Drawings</p>
+  </div>
 
   <div class="content">
     <div class="index">
@@ -17,7 +22,6 @@ var $container = $('#container');
 var msnry;
 
 var main = function() {
-  //$container.masonry('destroy');
 
   // wait for images to load
   $container.imagesLoaded( function(){

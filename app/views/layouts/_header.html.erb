@@ -1,0 +1,44 @@
+<header>
+  <nav class="slide-menu">
+    <% if current_user %>
+      <%= link_to destroy_user_session_path, :method => :delete do %>
+        <%= current_user.username %>
+      <% end %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path %>
+    <% end %>
+    <br><br>
+    <h2>About</h2>
+    <p>
+      amonograph is a clean, simple way to share vector drawings.
+      Architectural representation online has been deprecated to the
+      limitations of a bitmapped image, but we want to reinvigorate the drawing
+      as our medium once again.
+    </p>
+  </nav>
+  <div class="left">
+    <h1>amonograph / <span><a href="#" id="topbar">menu</a></span></h1>
+  </div>
+  <div class="center">
+  </div>
+  <div class="right">
+    <a href="#"><%= image_tag "search.svg" %></a>
+  </div>
+</header>
+
+
+<script>
+/*
+  Slidemenu
+*/
+(function() {
+  var $body = $('body');
+  var $menu_trigger = $('#topbar');
+
+  $menu_trigger.click( function(e) {
+    e.preventDefault();
+    $body.toggleClass('menu-active');
+  });
+
+}).call(this);
+</script>
