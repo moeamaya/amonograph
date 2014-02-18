@@ -113,6 +113,39 @@ textarea {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
 }
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1.0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1.0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.fadeIn {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
 .layout {
   overflow: hidden;
   height: 100%;
@@ -362,16 +395,17 @@ header {
 }
 
 .scroll-to-zoom {
-  font-size: 2em;
+  font-size: 1.4em;
+  pointer-events: none;
   position: absolute;
   text-align: center;
-  top: -1px;
+  top: -0;
   width: 100%;
   z-index: 1001;
   .container {
     background: #fff;
     border: 1px solid #ccc;
-    margin: 0 auto;
+    margin: 20% auto;
     width: 600px;
     p {
       margin-bottom: 14px;
@@ -379,7 +413,8 @@ header {
     a {
       display: block;
       padding-bottom: 24px;
-      font-size: 0.5em;
+      pointer-events: all;
+      font-size: 0.65em;
     }
   }
 }
