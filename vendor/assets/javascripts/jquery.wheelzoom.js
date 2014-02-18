@@ -75,6 +75,11 @@
 				img.src = transparentPNG;
 
 				img[wheel] = function (e) {
+					//
+					// Super bad hack to close scroll to zoom hint
+					//
+					$('.scroll-to-zoom').fadeOut();
+
 					var deltaY = 0;
 
 					e.preventDefault();
@@ -95,7 +100,7 @@
 					// Record the offset between the bg edge and cursor:
 					var bgCursorX = offsetX - bgPosX;
 					var bgCursorY = offsetY - bgPosY;
-					
+
 					// Use the previous offset to get the percent offset between the bg edge and cursor:
 					var bgRatioX = bgCursorX/bgWidth;
 					var bgRatioY = bgCursorY/bgHeight;
