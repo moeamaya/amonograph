@@ -47,7 +47,7 @@ class DrawingsController < ApplicationController
   private
 
   def drawing_params
-    params.require(:drawing).permit(:title, :about, :drawing, :views)
+    params.require(:drawing).permit(:title, :about, :drawing, :views, :original_file)
   end
 
   def authorize

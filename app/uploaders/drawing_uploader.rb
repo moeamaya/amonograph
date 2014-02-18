@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class DrawingUploader < CarrierWave::Uploader::Base
+  before :cache, :save_original_filename
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -47,5 +48,21 @@ class DrawingUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  def filename
+   "#{secure_token}.#{file.extension}" if original_filename.present?
+  end
+
+  def save_original_filename(file)
+    model.update_attribute(:original_filename, file.original_filename )
+    #model.original_filename ||= file.original_filename if file.respond_to?(:original_filename)
+    model.save
+  end
+
+  protected
+
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
+  end
 
 end
