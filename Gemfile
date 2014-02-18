@@ -49,11 +49,13 @@ gem 'newrelic_rpm'
 # logs views for pages/actions
 gem 'impressionist'
 
+# visualize db in rails console
+gem 'hirb'
+
 group :development do
   # debugging
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'hirb'
 end
 
 group :doc do
