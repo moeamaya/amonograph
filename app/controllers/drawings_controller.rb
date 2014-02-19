@@ -8,7 +8,7 @@ class DrawingsController < ApplicationController
     id = params[:id]
 
     @drawing = Drawing.find(id)
-    @next = Drawing.next(id.to_i)
+    @prev = Drawing.prev(id.to_i)
   end
 
   def new

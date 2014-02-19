@@ -9,19 +9,7 @@ class Drawing < ActiveRecord::Base
 
   is_impressionable :counter_cache => true, :column_name => :views, :unique => :request_hash
 
-  # Searches the next 5 id values for given input
-  # id expects an interger value
-  def self.next(id)
-    ids= []
-    5.times {
-      id += 1
-      ids << id
-    }
-    try = Drawing.order(:id).find_by_id(ids)
-    if try.nil?
-      return Drawing.first
-    else
-      return try
-    end
+  def self.prev(id)
+    Drawing.order("created_at DESC").where("drawings.id < ?", id).first
   end
 end
