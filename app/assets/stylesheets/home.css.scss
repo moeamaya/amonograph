@@ -209,14 +209,25 @@ body.menu-active header { margin-top: 300px; }
 header {
   color: #333;
   padding: 4% 4%;
+  pointer-events: none;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   h1 {
     font-weight: normal;
     font-size: 1em;
     margin: 0;
+  }
+  a {
+    pointer-events: all;
   }
   a.dark {
     color: #333;
