@@ -3,10 +3,10 @@
 !function($){
 	var transparentPNG = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg==";
 	var defaults = {
-		zoom: 0.10,
+		zoom: 0.07,
 		size: 1.0,
 		x: 0.5,
-		y: 0.5
+		y: 0.5,
 	};
 	var wheel;
 
@@ -31,8 +31,8 @@
 			function loaded() {
 				var width = $img.width(),
 					height = $img.height(),
-					bgWidth = width,
-					bgHeight = height,
+					bgWidth = width;
+					bgHeight = height;
 					bgPosX = 0,
 					bgPosY = 0,
 					offsetBorderX = parseInt($img.css('border-left-width'),10),
@@ -40,12 +40,13 @@
 					offsetPaddingX = parseInt($img.css('padding-left'),10),
 					offsetPaddingY = parseInt($img.css('padding-top'),10);
 
+
 				function reset() {
 					bgWidth = width;
 					bgHeight = height;
 					bgPosX = bgPosY = 0;
 					updateBgStyle();
-				}
+				};
 
 				function updateBgStyle() {
 					if (bgPosX > 0) {
@@ -62,7 +63,7 @@
 
 					img.style.backgroundSize = bgWidth + 'px ' + bgHeight + 'px';
 					img.style.backgroundPosition = (bgPosX+offsetPaddingX) + 'px ' + (bgPosY+offsetPaddingY) + 'px';
-				}
+				};
 
 				// Set initializer variables
 				bgWidth = bgWidth * settings.size;
@@ -87,6 +88,31 @@
 				img.height = img.height || img.naturalHeight;
 				img.src = transparentPNG;
 
+				function startSizeAndPos() {
+
+					// Set ratio to center of image
+					var startSize = settings.size;
+					var bgRatioX = settings.x;
+					var bgRatioY = settings.y;
+
+					// Update the bg size:
+					bgWidth = bgWidth * startSize;
+					bgHeight = bgHeight * startSize;
+
+					// find center of image for offset
+					offsetX = width / 2;
+					offsetY = height / 2;
+
+					// Take the percent offset and apply it to the new size:
+					bgPosX = offsetX - (bgWidth * bgRatioX);
+					bgPosY = offsetY - (bgHeight * bgRatioY);
+
+					updateBgStyle();
+				};
+
+				// call initial size
+				//startSizeAndPos();
+
 				// initializer variable set to 1 once wheelzoom fires
 				var first = 0;
 
@@ -97,7 +123,7 @@
 					if (first === 0) {
 						$('.scroll-to-zoom').fadeOut();
 						first = 1;
-					};
+					}
 
 					var deltaY = 0;
 
@@ -116,13 +142,15 @@
 					var offsetX = e.pageX - offsetParent.left - offsetBorderX - offsetPaddingX;
 					var offsetY = e.pageY - offsetParent.top - offsetBorderY - offsetPaddingY;
 
-					// Record the offset between the bg edge and cursor:
+					// Record the offset between the bg edge and cursor
 					var bgCursorX = offsetX - bgPosX;
 					var bgCursorY = offsetY - bgPosY;
 
 					// Use the previous offset to get the percent offset between the bg edge and cursor:
+					// Tells what part of image to zoom toward
 					var bgRatioX = bgCursorX/bgWidth;
 					var bgRatioY = bgCursorY/bgHeight;
+					console.log(bgRatioX, bgRatioY);
 
 					// Update the bg size:
 					if (deltaY < 0) {

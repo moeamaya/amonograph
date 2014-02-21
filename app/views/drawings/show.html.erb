@@ -45,7 +45,9 @@
 <script>
   // wait for images to load before calling js
   $('.drawing').imagesLoaded( function() {
-    $('.drawing img').wheelzoom();
+    $('.drawing img').wheelzoom({
+      zoom: 0.075
+    });
   });
 
 
