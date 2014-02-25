@@ -10,7 +10,6 @@ Amonograph::Application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'devise/sessions#destroy'
 
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
