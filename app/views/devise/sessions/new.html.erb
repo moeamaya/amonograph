@@ -1,6 +1,6 @@
 <div class="content">
   <div class="upload">
-    <h2>Sign in</h2>
+    <h2>Login</h2>
 
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div><%= f.label :username %>
@@ -12,6 +12,8 @@
       <div><%= f.submit "Sign in", :class => 'button' %></div>
     <% end %>
     <br>
-    <% # render "devise/shared/links" %>
+
+    <a href="/signup">Sign up</a>
+
   </div>
 </div>

@@ -5,12 +5,13 @@
         <%= current_user.username %>
       <% end %>
     <% else %>
-      <%= link_to "Sign in", new_user_session_path %>
+      <%= link_to "Login", login_path %> <span>or</span>
+      <%= link_to "Sign Up", signup_path %>
     <% end %>
     <br><br>
     <h2>About</h2>
     <p>
-      amonograph is a clean, simple way to share vector drawings.
+      Long Section is a clean, simple way to share vector drawings.
       Architectural representation online has been deprecated to the
       limitations of a bitmapped image, but we want to reinvigorate the drawing
       as our medium once again.
@@ -18,14 +19,14 @@
   </nav>
   <div class="left">
     <h1>
-      <a href="/" class="dark"> amonograph</a> /
+      <a href="/" class="dark"> long section</a> /
       <span><a href="#" id="topbar">menu</a></span>
     </h1>
   </div>
   <div class="center">
   </div>
   <div class="right">
-    <a href="#"><%= image_tag "search.svg" %></a>
+    <a href="/upload">upload<%# = image_tag "x.svg" %></a>
   </div>
 </header>
 

@@ -1,8 +1,9 @@
 class DrawingsController < ApplicationController
-  before_filter :authorize, only: [:upload, :edit, :create, :update]
+  before_filter :authorize, only: [:new, :upload, :edit, :create, :update]
   impressionist :actions => [:show, :unique => [:impressionable_type, :impressionable_id, :session_hash]]
 
   before_filter :first_time?, only: [:show]
+  #before_action :authenticate_user!, except: [:show]
 
   def show
     id = params[:id]
@@ -51,7 +52,7 @@ class DrawingsController < ApplicationController
   end
 
   def authorize
-    redirect_to root_path, alert: "Not authorized" if current_user.nil?
+    redirect_to login_path, alert: "Login first" if current_user.nil?
   end
 
   def first_time?
