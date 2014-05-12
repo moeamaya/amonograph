@@ -17,6 +17,9 @@
     <%= f.label :about %>
     <%= f.text_area :about, :rows => 8 %><br>
 
+    <h4>Save as SVG format in Illustrator</h4>
+    <h5>Approx dimensions 1200px x 900px</h5>
+
     <% if @drawing.drawing_url.nil? %>
       <%= f.file_field :drawing %><br />
     <% else %>
