@@ -24,7 +24,7 @@ class DrawingsController < ApplicationController
         format.html { redirect_to root_path, notice: 'Drawing was successfully uploaded.' }
         format.json { render json: @drawing, status: :created, location: @drawing }
       else
-        format.html { render action: "create" }
+        format.html { render action: "new" }
         format.json { render json: @drawing.errors, status: :unprocessable_entity }
       end
     end
