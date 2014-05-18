@@ -1,5 +1,5 @@
 class DrawingsController < ApplicationController
-  before_filter :authorize, only: [:new, :upload, :edit, :create, :update]
+  before_filter :authorize, only: [:new, :edit, :create, :update]
   impressionist :actions => [:show, :unique => [:impressionable_type, :impressionable_id, :session_hash]]
 
   before_filter :first_time?, only: [:show]
@@ -21,10 +21,10 @@ class DrawingsController < ApplicationController
 
     respond_to do |format|
       if @drawing.save
-        format.html { redirect_to root_path, notice: 'Note was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Drawing was successfully uploaded.' }
         format.json { render json: @drawing, status: :created, location: @drawing }
       else
-        format.html { render action: "upload" }
+        format.html { render action: "create" }
         format.json { render json: @drawing.errors, status: :unprocessable_entity }
       end
     end
